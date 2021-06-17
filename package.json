@@ -15,17 +15,18 @@
   },
   "scripts": {
     "lint": "eslint . --cache  --fix --ext=jsx --ext=js",
-    "dev": "cross-env SERVER_NODE_OPTIONS='-r ./node_env.js'  meteor --exclude-archs web.browser.legacy,web.cordova,web.browser --no-release-check --no-lint -p 4010",
+    "dev": "cross-env SERVER_NODE_OPTIONS='-r ./node_env.js'  meteor --allow-incompatible-update --exclude-archs web.browser.legacy,web.cordova,web.browser --no-release-check --no-lint -p 4010",
     "build": "cross-env meteor build --server-only --directory .build",
     "debug": "cross-env SERVER_NODE_OPTIONS='-r ./node_env.js' meteor --exclude-archs web.browser.legacy,web.cordova,web.browser debug -p 4010"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.13",
-    "@unchainedshop/controlpanel": "^1.0.0-beta3",
+    "@unchainedshop/controlpanel": "^0.61.4",
     "apollo-server-express": "^2.21.0",
     "client-oauth2": "github:unchainedshop/js-client-oauth2#master",
     "dotenv-extended": "^2.9.0",
     "graphql": "^15.5.0",
+    "isomorphic-unfetch": "^3.1.0",
     "locale": "^0.1.0",
     "meteor-node-stubs": "^1.0.1",
     "moment": "^2.29.1",
