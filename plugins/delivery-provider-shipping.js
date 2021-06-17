@@ -8,7 +8,7 @@ import { WorkerDirector } from 'meteor/unchained:core-worker';
 import prepareOrderRow from '../sheets/prepareOrderRow';
 
 class Delivery extends DeliveryAdapter {
-  static key = 'ch.unchained-food-delivery.delivery.shipping';
+  static key = 'unchained-shipping';
 
   static label = 'Heimlieferung';
 

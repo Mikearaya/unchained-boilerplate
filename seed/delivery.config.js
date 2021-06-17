@@ -3,8 +3,8 @@ import { DeliveryProviderType } from 'meteor/unchained:core-delivery';
 export default {
   deliveryProviders: [
     {
-      _id: 'unchained-food-delivery-pickup',
-      adapterKey: 'ch.unchained-food-delivery.delivery.pickup',
+      _id: 'unchained-delivery-pickup',
+      adapterKey: 'unchained-delivery.pickup',
       type: DeliveryProviderType.PICKUP,
       configuration: [
         {
@@ -18,8 +18,8 @@ export default {
       ],
     },
     {
-      _id: 'unchained-food-delivery-shipping',
-      adapterKey: 'ch.unchained-food-delivery.delivery.shipping',
+      _id: 'unchained-delivery-shipping',
+      adapterKey: 'unchained-delivery.shipping',
       type: DeliveryProviderType.SHIPPING,
       configuration: [
         {

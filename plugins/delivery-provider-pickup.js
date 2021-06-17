@@ -52,7 +52,7 @@ Donnerstag 12–20 Uhr`,
 ];
 
 class Pickup extends DeliveryAdapter {
-  static key = 'ch.unchained-food-delivery.delivery.pickup';
+  static key = 'unchained-delivery.pickup';
 
   static label = 'Pick-up';
 

@@ -3,23 +3,6 @@ import { OrderPricingSheetRowCategories } from 'meteor/unchained:core-pricing';
 import formatAddress from '../utils/formatAddress';
 import { getDeliveryCostClass } from '../plugins/delivery-price';
 
-const { ROOT_URL } = process.env;
-
-const statusMap = {
-  OPEN: 'offen',
-  PENDING: 'in verarbeitung',
-  CONFIRMED: 'NEU',
-  FULLFILLED: 'ausgeliefert',
-};
-
-const paymentMethodMap = {
-  invoice: 'versendet',
-};
-
-const milkCrateFreeMap = {
-  accessible: '… ist frei zugänglich',
-  not_accessible: '… ist nicht zugänglich',
-};
 
 const getDeliveryMethod = (
   deliveryProviderType,
@@ -27,9 +10,9 @@ const getDeliveryMethod = (
   pickupLocation,
 ) => {
   if (deliveryProviderType === 'SHIPPING') {
-    return `Heimlieferung - ${deliveryCostClass.name}`;
+    return `Home delivery - ${deliveryCostClass.name}`;
   }
-  return `Pick-Up bei ${pickupLocation.address.company} ${
+  return `Pick-Up by ${pickupLocation.address.company} ${
     pickupLocation.address.firstName || ''
   }`.trim();
 };
@@ -115,15 +98,12 @@ const prepareOrderRow = async (order, meta) => {
     city: deliveryAddress.city,
     deliveryDate: '',
     status: statusMap[order.status],
-    paymentMethod:
-      paymentMethodMap[payment?.provider()?._id] || payment?.provider()?._id,
+    paymentMethod: payment?.provider()?._id,
     deliveryMethod: getDeliveryMethod(
       deliveryProvider?.type,
       deliveryCostClass,
       pickupLocation,
     ),
-    milkCrateFree: milkCrateFreeMap[meta.parcelBoxInfo],
-    messengerInfo: meta.comment,
     discountTotal: discountTotal.amount / 100,
     couponCode: discountCodes.join(', '),
     trackingNumber: '',
@@ -134,7 +114,6 @@ const prepareOrderRow = async (order, meta) => {
     products,
     itemsCost: itemsTotal.amount / 100,
     pickupLocationId: delivery?.context?.orderPickUpLocationId,
-    controlPanelLink: `${ROOT_URL}/orders/view/?_id=${order._id}`,
     deliveryCost: deliveryTotal.amount / 100,
     isShipping,
     minimumOrderFee: minimumOrderFee / 100,

@@ -101,7 +101,7 @@ export const getDeliveryCostClass = (postalCode) =>
       ) || DEFAULT_DELIVERY_COST_CLASS
     : UNKNOWN_DELIVERY_COST_CLASS;
 
-class DeliveryZurichCityPrice extends DeliveryPricingAdapter {
+class DeliveryPrice extends DeliveryPricingAdapter {
   static key = 'shop.unchained.pricing.delivery-zurich';
 
   static version = '1.0';
@@ -143,7 +143,7 @@ class DeliveryZurichCityPrice extends DeliveryPricingAdapter {
 
     if (this.context.provider.type === 'SHIPPING') {
       const deliveryInfo = [];
-      this.log('DeliveryZurichCityPrice -> Add Fee');
+      this.log('DeliveryPrice -> Add Fee');
 
       this.context.meta = { ...this.context.meta, test: 'asdf' };
 
@@ -256,4 +256,4 @@ class DeliveryZurichCityPrice extends DeliveryPricingAdapter {
   }
 }
 
-DeliveryPricingDirector.registerAdapter(DeliveryZurichCityPrice);
+DeliveryPricingDirector.registerAdapter(DeliveryPrice);
