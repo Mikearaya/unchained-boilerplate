@@ -2,13 +2,9 @@ import { Users } from 'meteor/unchained:core-users';
 import { Countries } from 'meteor/unchained:core-countries';
 import { Currencies } from 'meteor/unchained:core-currencies';
 import { Languages } from 'meteor/unchained:core-languages';
-import { PaymentProviders } from 'meteor/unchained:core-payment';
-import { DeliveryProviders } from 'meteor/unchained:core-delivery';
 import { hashPassword } from 'meteor/unchained:api';
 
 import i18nConfiguration from './i18n.config';
-import paymentConfiguration from './payment.config';
-import deliveryConfiguration from './delivery.config';
 
 const logger = console;
 
@@ -64,26 +60,6 @@ export default async () => {
       authorId: admin._id,
       defaultCurrencyId: currencyCodeToObjectMap[defaultCurrencyCode]._id,
       ...rest,
-    });
-  });
-
-  const { paymentProviders } = paymentConfiguration;
-  paymentProviders.forEach((paymentProvider) => {
-    PaymentProviders.insert({
-      authorId: admin._id,
-      configuration: [],
-      created: new Date(),
-      ...paymentProvider,
-    });
-  });
-
-  const { deliveryProviders } = deliveryConfiguration;
-  deliveryProviders.forEach((deliveryProvider) => {
-    DeliveryProviders.insert({
-      authorId: admin._id,
-      configuration: [],
-      created: new Date(),
-      ...deliveryProvider,
     });
   });
 

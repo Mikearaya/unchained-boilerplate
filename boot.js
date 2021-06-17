@@ -5,9 +5,6 @@ import { embedControlpanelInMeteorWebApp } from '@unchainedshop/controlpanel';
 
 import 'meteor/unchained:core-payment/plugins/invoice';
 
-import './plugins/delivery-provider-pickup';
-import './plugins/delivery-provider-shipping';
-
 import seed from './seed';
 
 Meteor.startup(async () => {
