@@ -5,7 +5,7 @@ import {
   import fetch from "isomorphic-unfetch";
   
   const PRODUCT_TAG_SAUSAGE = "sausage";
-  const SAUSAGE_THRESHOLD_CELSIUS = 20;
+  const SAUSAGE_THRESHOLD_CELSIUS = 40;
   
   class WeatherDependentBarbequeSausagePricing extends ProductPricingAdapter {
     static key = "shop.unchained.wd-bbq-sausage-pricing";
