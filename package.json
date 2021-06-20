@@ -1,5 +1,5 @@
 {
-  "name": "@unchainedshop/engine-boilerplate",
+  "name": "@mikearaya/create-engine",
   "license": "EUPL-1.2",
   "contributors": [
     "Vedran Rudelj <vedran@unchained.shop> (https://unchained.shop)",
@@ -44,5 +44,24 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1"
-  }
+  },
+  "description": "### required .env properties",
+  "version": "1.0.0",
+  "main": "boot.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mikearaya/unchained-boilerplate.git"
+  },
+  "keywords": [
+    "unchained",
+    "headless",
+    "e-commerce",
+    "javascript",
+    "graphql"
+  ],
+  "author": "Mikael Araya",
+  "bugs": {
+    "url": "https://github.com/Mikearaya/unchained-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Mikearaya/unchained-boilerplate#readme"
 }
