@@ -63,5 +63,8 @@
   "bugs": {
     "url": "https://github.com/Mikearaya/unchained-boilerplate/issues"
   },
+  "bin": {
+    "create-engine": "./init.js"
+  },
   "homepage": "https://github.com/Mikearaya/unchained-boilerplate#readme"
 }
